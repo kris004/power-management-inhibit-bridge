@@ -1,0 +1,16 @@
+[package]
+name = "power-management-inhibit-bridge"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+description = "Bridge freedesktop power-management inhibit requests to systemd-logind"
+license = "GPL-3.0-only"
+repository = "https://github.com/kris004/power-management-inhibit-bridge"
+publish = false
+
+[dependencies]
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
