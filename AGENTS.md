@@ -45,8 +45,15 @@ reachable object as potentially public.
 
 ## Publication and releases
 
-- This request authorizes the initial public scaffold push only. Future pushes,
-  visibility changes, releases, and deployment require explicit authorization.
+- Validate, commit, and push completed task-owned changes to the intended
+  existing remote without a separate push request. Push directly when permitted;
+  if main or the target branch is protected, push a task branch and follow the
+  required pull-request/review/check workflow without bypassing protections.
+- Review the complete outgoing commit range, exclude unrelated work and secrets,
+  avoid force-pushes, and verify the remote branch after pushing.
+- New remotes, visibility changes, release/tag publication, and deployment
+  require separate explicit authorization. A push that itself releases or
+  deploys also needs that separate authorization.
 - Before the first public release, scan the working tree and reachable history
   for secrets and environment-specific material.
 - Releases require a hardware-backed OpenPGP-signed annotated version tag on
